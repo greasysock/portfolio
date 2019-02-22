@@ -5,8 +5,9 @@ class Blog < ApplicationRecord
         published: 1
     }
 
-
     validates_presence_of :title, :body
+
+    belongs_to :topic
 
     extend FriendlyId
     friendly_id :title, use: :slugged
