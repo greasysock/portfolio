@@ -12,6 +12,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <p><%= link_to "Home", root_path %>
+    <%= link_to "Blog", blogs_path %>
+    <%= link_to "Portfolio", portfolios_path %></p>
 
     <% if current_user %>
     <%= "Hello, #{current_user.name}"%>
