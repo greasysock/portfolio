@@ -12,6 +12,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <% if current_user %>
     <%= "Hello, #{current_user.name}"%>
     <%= link_to "Logout", destroy_user_session_path, method: :delete%>
@@ -21,5 +22,7 @@
     <% end %>
 
     <%= yield %>
+    <hr>
+      <p><%= "Thanks for visiting me from #{session[:source]}" if session[:source]%></p>
   </body>
 </html>
