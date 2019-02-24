@@ -10,10 +10,15 @@
   </head>
 
   <body>
+
+    <p><%= link_to "Home", root_path %>
+    <%= link_to "Blog", blogs_path %>
+    <%= link_to "Portfolio", portfolios_path %></p>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if current_user %>
-    <%= "Hello, #{current_user.name}"%>
+
+    <% if current_user.is_a?(User) %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete%>
     <% else %>
     <%= link_to "Login", new_user_session_path %>
@@ -21,5 +26,7 @@
     <% end %>
 
     <%= yield %>
+    <hr>
+      <p><%= "Thanks for visiting me from #{session[:source]}" if session[:source]%></p>
   </body>
 </html>
