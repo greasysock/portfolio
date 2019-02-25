@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%=@page_title%> </title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="keywords" content="<%=@seo_keywords%>"/>
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div id="header" class="header">
+        <div class="logodiv">
+            <img class="logo" src="<%=asset_url("logo.svg", type: :image)%>" /></a>
+
+            <div class="filter">
+            <%= link_to "HOME", root_path %>
+
+            <span class="footdogs">  / </span>
+            <b><%= link_to "[BLOG]", blogs_path %></b>
+
+            <span class="footdogs">  / </span>
+            <%= link_to "PORTFOLIO", portfolios_path %>
+
+            <span class="footdogs">  / </span>
+            <%= link_to "ABOUT", about_path %>
+
+            <span class="footdogs">  / </span>
+            <%= link_to "CONTACT", contact_path %>
+
+            </div>
+            <div class="filter">
+
+        <% if current_user.is_a? User  %>
+        <%= link_to "[Logout]", destroy_user_session_path, method: :delete%>
+        <% else %>
+        <%= link_to "[Login]", new_user_session_path %>
+        <%= link_to "[Register]", new_user_registration_path %>
+        <% end %>
+            </div>
+        </div>
+    </div>
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div id="page">
+    <%= yield %>
+    </div>
+
+    <hr>
+      <p><%= "Thanks for visiting me from #{session[:source]}" if session[:source]%></p>
+  </body>
+</html>

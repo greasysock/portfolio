@@ -16,9 +16,11 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+        <div><%= link_to '[Show]', blog %></div>
+        <div><%= link_to '[Edit]', edit_blog_path(blog) %></div>
+        <div><%= link_to '[Destroy]', blog, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        </td>
       </tr>
     <% end %>
   </tbody>
