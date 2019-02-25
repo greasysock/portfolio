@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_page_title_action
 
   # GET /blogs
   # GET /blogs.json
@@ -10,6 +11,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    set_page_subtitle "Blogs - #{@blog.title}"
   end
 
   # GET /blogs/new
@@ -70,5 +72,9 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :body)
+    end
+
+    def set_page_title_action
+      set_page_subtitle "Blogs"
     end
 end
