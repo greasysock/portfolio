@@ -3,5 +3,4 @@ class ApplicationController < ActionController::Base
     include SessionParameters
     include CurrentUserConcern
     include DefaultPageContent
-    
 end
