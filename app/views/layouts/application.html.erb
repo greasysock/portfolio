@@ -10,13 +10,17 @@
   </head>
   <body>
 
-  <%= render "shared/nav", location:"bottom" %>
-
+  <%= render "shared/nav", location:"header" %>
+    <div id="page">
+    <%=params['controller']%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
     <%= yield %>
+    <p>
+    <%=@copyright%>
+    </p>
     <hr>
       <p><%= "Thanks for visiting me from #{session[:source]}" if session[:source]%></p>
+      </div>
   </body>
 </html>
