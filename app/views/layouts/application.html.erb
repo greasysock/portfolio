@@ -11,19 +11,20 @@
   <body>
 
   <%= render "shared/nav", location:"header" %>
-    <div id="page">
+   <div id="page">
     <%if notice%>
-    <p class="notice"><%= notice %></p>
+    <p class="alert alert-info"><%= notice %></p>
     <%end%>
     <%if alert%>
-    <p class="alert"><%= alert %></p>
+    <p class="alert alert-warning"><%= alert %></p>
     <%end%>
     <%= yield %>
-    <p>
-    <%=@copyright%>
-    </p>
-    <hr>
-      <p><%= "Thanks for visiting me from #{session[:source]}" if session[:source]%></p>
+        <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p><%=@copyright%></p>
+        </div>
+      </footer>
       </div>
+
   </body>
 </html>
