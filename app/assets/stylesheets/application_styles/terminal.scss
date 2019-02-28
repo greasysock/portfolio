@@ -11,6 +11,10 @@
 	//background: rgb(53, 67, 91);   
 
 }
+  ::selection {
+		color: black;
+		background: white;
+	}
   
   html {
 	-webkit-font-smoothing: antialiased;
@@ -227,6 +231,10 @@
 		//border: solid 1px rgb(138, 138, 138);
 		padding: 20px;
 		border-radius: 5px;
+	}
+	.card ::selection{
+		color: white;
+		background: black;
 	}
 	.card-body {
 		padding: 20px;
