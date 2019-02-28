@@ -1,10 +1,21 @@
-<%= image_tag @portfolio_item.main_image %>
+<%= render :layout => '/portfolios/shared/portfolio_wrapper' do %>
+    <div class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-7 portfolio-image">
+                <%= image_tag @portfolio_item.main_image %>
+            </div>
+            <div class="col-md-5">
+                <h1><%= @portfolio_item.title %></h1>
+                <em><%= @portfolio_item.subtitle %></em>
+                <p><%= @portfolio_item.body %></p>
 
-<h1><%= @portfolio_item.title %></h1>
-<em><%= @portfolio_item.subtitle %></em>
-<p><%= @portfolio_item.body %></p>
-
-<h2>Technologies Used:</h2>
-<% @portfolio_item.technologies.each do |t| %>
-<p><%= t.name %></p>
+                <h2>Technologies Used:</h2>
+                <% @portfolio_item.technologies.each do |t| %>
+                <p><%= t.name %></p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    </div>
 <% end %>
