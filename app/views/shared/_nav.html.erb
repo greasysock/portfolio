@@ -3,19 +3,7 @@
         <img class="logo" src="<%=asset_url("logo.png", type: :image)%>" /></a>
 
         <div class="filter">
-        <%= link_to "HOME", root_path %>
-
-        <span class="footdogs">  / </span>
-        <%= link_to "BLOG", blogs_path %>
-
-        <span class="footdogs">  / </span>
-        <%= link_to "PORTFOLIO", portfolios_path %>
-
-        <span class="footdogs">  / </span>
-        <%= link_to "ABOUT ME", about_path %>
-
-        <span class="footdogs">  / </span>
-        <%= link_to "CONTACT", contact_path %>
+        <%=nav_helper%>
 
         </div>
         <div class="filter">
