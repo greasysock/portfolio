@@ -236,3 +236,23 @@
 	.blackify a {
 		color: rgb(0,0,0);
 	}
+
+	.social-links li {
+		font-size: 2.5em;
+	}
+
+	.bg-match {
+		background-color: rgba(0, 0, 0, 0.329);
+		border: solid 1px rgb(138, 138, 138);
+	}
+
+	//Pagination Style
+.pagination{
+	padding:.3em;margin:.3em; 
+	font: 13.34px;}
+
+.pagination a{
+	padding:.1em .3em;margin:.2em;border:1px solid #aad;text-decoration:none;color:rgb(255, 255, 255);}
+.pagination a:hover,.pagination a:active{border:1px solid rgb(255, 255, 255);color:rgb(102, 98, 155);}
+.pagination span.current{padding:.1em .3em;margin:.2em;border:1px solid rgb(255, 255, 255);font-weight:bold;background-color:rgb(180, 196, 211);color:#FFF;}
+.pagination span.disabled{padding:.1em .3em;margin:.2em;border:1px solid #eee;color:#ddd;}

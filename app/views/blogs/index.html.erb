@@ -3,5 +3,6 @@
         Development Log
       </h3>
       <%= link_to 'Write a new blog', new_blog_path if logged_in?(:site_admin) %>
-          <%= render @blogs %>
+      <%= render @blogs %>
+      <%= paginate @blogs %>
 <% end %>

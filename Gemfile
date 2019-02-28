@@ -53,6 +53,8 @@ group :development do
 end
 
 
+gem 'font-awesome-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -62,3 +64,4 @@ gem 'pry-byebug'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'petergate'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
