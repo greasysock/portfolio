@@ -219,4 +219,20 @@
 	body {
 	  font-size: 19px;
 	}
-  }
+	}
+	
+	.card {
+		//background: rgba(126, 126, 126, 0.329);
+		color: rgb(0, 0, 0);
+		//border: solid 1px rgb(138, 138, 138);
+		padding: 20px;
+		border-radius: 25px;
+	}
+	.card-body {
+		padding: 20px;
+		border-radius: 25px;
+	}
+
+	.blackify a {
+		color: rgb(0,0,0);
+	}

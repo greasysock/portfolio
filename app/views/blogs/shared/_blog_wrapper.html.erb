@@ -1,0 +1,8 @@
+<%= stylesheet_link_tag    'application_styles/blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <%=yield%>
+        </div><!-- /.blog-main -->
+
+<%=render "/blogs/shared/sidebar"%>

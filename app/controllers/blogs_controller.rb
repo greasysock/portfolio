@@ -76,6 +76,6 @@ class BlogsController < ApplicationController
     end
 
     def set_page_title_action
-      set_page_subtitle "Blogs"
+      set_page_subtitle "Blog"
     end
 end
