@@ -1,5 +1,26 @@
-<h1>Portfolio Items</h1>
+<%= stylesheet_link_tag    'application_styles/portfolio', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container jumbotron-container">
+          <h1 class="jumbotron-heading">Portfolio</h1>
+          <p class="lead">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        </div>
+      </section>
+
+      <div class="album py-5">
+        <div class="container">
+
+          <div class="row">
+            <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+          </div>
+
+
+        </div>
+      </div>
+
+    </main>
 
 <%= link_to "Create New Item", new_portfolio_path if logged_in?(:site_admin) %>
 
-<%= render partial: 'portfolio_item', collection: @portfolio_items %>
