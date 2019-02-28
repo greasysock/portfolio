@@ -8,7 +8,6 @@ class PortfoliosController < ApplicationController
 
     def create
         @portfolio_item = Portfolio.new(portfolio_params)
-    
         respond_to do |format|
           if @portfolio_item.save
             format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
@@ -38,7 +37,7 @@ class PortfoliosController < ApplicationController
 
     def sort
       @_dangerous_params[:order].each do |key, value|
-        Portfolio.find(value[:id]).update(position: value[:position])
+        Portfolio.find(value[:id]).update!(position: value[:position])
       end
       render nothing: true
     end
@@ -59,7 +58,9 @@ class PortfoliosController < ApplicationController
     def portfolio_params
       params.require(:portfolio).permit(:title, 
         :subtitle, 
-        :body, 
+        :body,
+        :main_image,
+        :thumb_image,
         technologies_attributes: [:name])
     end
     

@@ -3,7 +3,7 @@
     <div class="card portfolio-view">
         <div class="row">
             <div class="col-md-7 portfolio-image">
-                <%= image_tag @portfolio_item.main_image %>
+                <%= image_tag @portfolio_item.main_image.to_s %>
             </div>
             <div class="col-md-5">
                 <h1><%= @portfolio_item.title %></h1>
