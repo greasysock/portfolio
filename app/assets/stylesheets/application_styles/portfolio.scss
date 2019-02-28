@@ -1,4 +1,3 @@
-@import"jquery-ui";
 
 :root {
     --jumbotron-padding-y: 2rem;
@@ -61,4 +60,8 @@
 }
   .portfolio-view {
       padding: 25px;
+  }
+
+  .blue-background-class .card {
+    background-color: #C8EBFB;
   }
