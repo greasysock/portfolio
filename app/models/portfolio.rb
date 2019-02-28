@@ -12,6 +12,10 @@ class Portfolio < ApplicationRecord
     def self.ruby
         where(subtitle: 'Ruby on Rails')
     end
+    
+    def self.by_position
+        self.order("position ASC")
+    end
 
     after_initialize :set_defaults
 
