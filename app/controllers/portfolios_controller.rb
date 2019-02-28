@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :update, :destroy, :show]
+  before_action :use_unsafe_params, only: [:sort]
   access all: [:show, :index], site_admin: :all
     def index
         @portfolio_items = Portfolio.by_position
@@ -35,6 +36,13 @@ class PortfoliosController < ApplicationController
           end
     end
 
+    def sort
+      @_dangerous_params[:order].each do |key, value|
+        Portfolio.find(value[:id]).update(position: value[:position])
+      end
+      render nothing: true
+    end
+
     def show
     end
 
@@ -57,5 +65,9 @@ class PortfoliosController < ApplicationController
     
     def set_portfolio_item
       @portfolio_item = Portfolio.find(params[:id])
+    end
+
+    def use_unsafe_params
+      @_dangerous_params = request.parameters
     end
 end
