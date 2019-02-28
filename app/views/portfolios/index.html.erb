@@ -1,7 +1,7 @@
 <%= render :layout => '/portfolios/shared/portfolio_wrapper' do %>
       <div class="album py-5">
         <div class="container">
-          <div class="row sortable", id="sortable">
+          <div class="row sortable", id="<%="sortable" if logged_in?(:site_admin)%>">
             <%= render partial: 'portfolio_item', collection: @portfolio_items %>
           </div>
         </div>
