@@ -5,8 +5,6 @@ class Blog < ApplicationRecord
         published: 1
     }
 
-    # Sets default scope ordered newest first.
-    default_scope ->{ order('created_at desc') }
     validates_presence_of :title, :body
 
     belongs_to :topic, class_name: "Topic", optional: true
@@ -14,7 +12,8 @@ class Blog < ApplicationRecord
     extend FriendlyId
     friendly_id :title, use: :slugged
 
-    def self.special_blogs
-        limit(2)
-    end
+    # Scopes
+    scope :published, ->{ where(status: :published) }
+    scope :newest, -> { order( 'created_at desc' ) }
+
 end

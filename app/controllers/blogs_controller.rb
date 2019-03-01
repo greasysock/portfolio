@@ -1,12 +1,17 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   before_action :set_page_title_action
   access all: [:show, :index], site_admin: :all
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    case current_user.roles[0]
+    when :site_admin
+      @blogs = Blog.newest.page(params[:page]).per(5)
+    else
+      @blogs = Blog.published.newest.page(params[:page]).per(5)
+    end
   end
 
   # GET /blogs/1
@@ -22,6 +27,19 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
+  end
+
+  def toggle_status
+    case @blog.status.to_sym
+    when :draft
+      @blog.update(status: :published)
+    when :published
+      @blog.update(status: :draft)
+    end
+
+    respond_to do |format|
+      format.html { redirect_to @blog, notice: 'Blog was toggled.' }
+    end
   end
 
   # POST /blogs

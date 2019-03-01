@@ -130,3 +130,17 @@
   .blog-footer p:last-child {
     margin-bottom: 0;
   }
+
+  .blogs-admin {
+    padding: 4px;
+    flex-direction: row;
+    max-width: min-content;
+    max-height: 6ex;
+    background-color: rgba(0, 0, 0, 0.329);
+    border: solid 1px rgb(138, 138, 138);
+
+  }
+  .blogs-admin .btn{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
