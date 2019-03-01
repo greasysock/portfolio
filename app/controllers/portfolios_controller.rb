@@ -39,8 +39,7 @@ class PortfoliosController < ApplicationController
       @_dangerous_params[:order].each do |key, value|
         Portfolio.find(value[:id]).update!(position: value[:position])
       end
-      render nothing: true
-    end
+      head 200, content_type: "text/html"    end
 
     def show
     end

@@ -15,6 +15,11 @@
 		color: black;
 		background: white;
 	}
+
+	.form-group ::selection{
+		color: white;
+		background: black;
+	}
   
   html {
 	-webkit-font-smoothing: antialiased;
@@ -260,10 +265,10 @@
 	font: 13.34px;}
 
 .pagination a{
-	padding:.1em .3em;margin:.2em;border:1px solid #aad;text-decoration:none;color:rgb(255, 255, 255);}
-.pagination a:hover,.pagination a:active{border:1px solid rgb(255, 255, 255);color:rgb(102, 98, 155);}
+	padding:.1em .3em;margin:.2em;border:1px solid #aad;text-decoration:none;color:rgb(167, 167, 167);}
+.pagination a:hover,.pagination a:active{border:1px solid rgb(255, 255, 255);color:rgb(255, 255, 255);}
 .pagination span.current{padding:.1em .3em;margin:.2em;border:1px solid rgb(255, 255, 255);font-weight:bold;background-color:rgb(180, 196, 211);color:#FFF;}
-.pagination span.disabled{padding:.1em .3em;margin:.2em;border:1px solid #eee;color:#ddd;}
+.pagination span.disabled{padding:.1em .3em;margin:.2em;border:1px solid rgba(0, 0, 0, 0);color:rgb(146, 146, 146);}
 
 #background {
 	position: fixed;
