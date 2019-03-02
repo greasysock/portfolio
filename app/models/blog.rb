@@ -8,6 +8,7 @@ class Blog < ApplicationRecord
     validates_presence_of :title, :body
 
     belongs_to :topic, class_name: "Topic", optional: true
+    has_many :comments, dependent: :destroy
 
     extend FriendlyId
     friendly_id :title, use: :slugged

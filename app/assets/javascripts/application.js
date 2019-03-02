@@ -17,5 +17,6 @@
 //= require activestorage
 //= require Sortable
 //= require cocoon
+//= require cable
 //= require turbolinks
 //= require_tree .
