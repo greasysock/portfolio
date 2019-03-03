@@ -19,4 +19,16 @@ module BlogsHelper
             end
         end
     end
+
+    def markdown content
+        options = {
+            filter_html:     true,
+            link_attributes: { rel: 'nofollow', target: "_blank" },
+            space_after_headers: true,
+            prettify: true
+          }
+        renderer = Redcarpet::Render::HTML.new(options)
+        markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+        markdown.render(content).html_safe
+    end
 end

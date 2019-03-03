@@ -1,16 +1,7 @@
 <%= render :layout => '/blogs/shared/blog_wrapper' do %>
 <p id="notice"><%= notice %></p>
 
-<div class="blog-post">
-<h2 class="blog-post-title"><%=link_to @blog.title, @blog%></h2>
-<p class="blog-post-meta">Published <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago by <a href="#">Chris</a></p>
-<p class="blog-post-meta">
- <nav class="blog-pagination">
-    <%=admin_controls @blog%>
-    </nav>
-</p>
-<p><%=@blog.body%></p>
-</div>
+<%= render @blog %>
 
 <%= render "comments/comments_section"%>
 
