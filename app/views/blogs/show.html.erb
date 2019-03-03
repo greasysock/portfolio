@@ -12,20 +12,6 @@
 <p><%=@blog.body%></p>
 </div>
 
-<div class="card">
-<%= render "comments/comment_form"%>
-</div>
-
-<div id="comments" data-blog-id="<%= @blog.id %>">
-<%= render @blog.comments %>
-</div>
+<%= render "comments/comments_section"%>
 
 <%end%>
-
-<!-- Start of comment form -->
-
-<!-- End of comment form-->
-
-<!-- Start of comments -->
-
-<!-- End of comments -->

@@ -1,0 +1,10 @@
+
+<!-- comments container -->
+		<div class="comment_block">
+		 <!-- used by #{user} to create a new comment -->
+            <%=render "comments/comment_form"%>
+<!-- new comment -->
+            <div id="comments" data-blog-id="<%= @blog.id %>">
+            <%=render @blog.comments.newest %>
+            </div>
+		</div>

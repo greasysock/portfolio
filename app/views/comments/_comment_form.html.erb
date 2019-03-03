@@ -1,9 +1,25 @@
-<% unless current_user.is_a? GuestUser%>
-    <%= form_for @comment, url:'#' do |f|%>
-        <div class="form-group">
-            <%= f.label :content %>
-            <%= f.text_area :content, class: "form-control" %>
+<% if !current_user.is_a? GuestUser%>
+    <%= form_with model: @comment, url:'#', local:true, id: "new_comment"  do |f|%>
+        <div class="create_new_comment"> 
+            <div class="user_avatar">
+		 		<img src="https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/73.jpg">
+		 	</div><div class="input_comment">
+                <%= f.text_field :content, placeholder:"Join the conversation.." %>
+            </div>
         </div>
-        <%= f.submit 'Post Comment', id: "submit_button", class: 'btn btn-secondary', data: {disable_with: false} %>
+        <%= f.submit 'Post Comment', id: "submit_button", class: 'sr-only', data: {disable_with: false} %>
     <%end%>
+<%else%>
+    <div class="create_new_comment">
+
+    <!-- current #{user} avatar -->
+    <div class="user_avatar">
+        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/73.jpg">
+    </div><!-- the input field --><div class="input_comment">
+    <a href="<%=new_user_session_path%>">
+        <input type="text" placeholder="Join the conversation.." disabled="">
+        </a>
+    </div>
+
+    </div>
 <%end%>

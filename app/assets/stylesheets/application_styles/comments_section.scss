@@ -1,0 +1,156 @@
+
+$LATO: 'Lato', sans-serif;
+$background_color: rgba(0, 0, 0, 0.329);
+$border_color: rgb(138, 138, 138);
+$GREY: #CCC;
+$BACKGROUND_GREY: lighten(#EEEDED, 2.5%);
+$SUBTLE_GREY: #F2F2F2;
+$MURKY_GREY: #384148;
+$DARK_GREY: rgb(235, 235, 235);
+
+$WHITE: $background_color;
+$SUBTLE_WHITE: #F9F9F9;
+
+$BLUE: #6495ED;
+$RED: #FF6347;
+
+.user_avatar {
+	width: 65px;
+	height: 65px;
+
+	display: inline-block;
+	vertical-align: middle;
+
+	img {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+}
+
+.comment_block {
+	width: 100%;
+	height: 100%;
+
+	margin: 0 auto;
+	padding: 10px;
+
+	.create_new_comment {
+		width: 100%;
+        padding: 20px 0;
+        border-top: 1px solid $border_color;
+
+		.input_comment {
+			display: inline-block;
+			vertical-align: middle;
+
+			margin-left: 10px;
+			width: calc(100% - 75px);
+
+			input[type="text"] {
+				width: 100%;
+
+				font-family: $LATO;
+				font-weight: 300;
+				font-size: 1.3rem;
+
+				padding: 10px;
+
+				border: none;
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+
+	.new_comment {
+		width: 100%;
+		height: auto;
+		padding: 20px 0;
+
+		.user_comment {
+			list-style-type: none;
+		}
+
+		.comment_body {
+			display: inline-block;
+			vertical-align: middle;
+
+			width: calc(100% - 75px);
+        min-height: 65px;
+			margin-left: 10px;
+			padding: 5px 10px;
+			font-size: .9rem;
+			color: rgb(255, 255, 255);
+			background-color: $WHITE;
+            border: 1px solid $border_color;
+            border-radius: 5px;
+			
+			.replied_to {
+				margin: 5px 0px;
+				background-color: lighten($GREY, 18%);
+				border-bottom: 2px solid lighten($GREY, 15%);
+				border-radius: 5px;
+				p {
+					padding: 5px;
+				}
+				span {
+					color: $BLUE;
+					margin-right: 2px;
+				}
+			}
+		}
+
+		.comment_toolbar {
+			width: 100%;
+
+			ul {
+				list-style-type: none;
+				padding-left: 75px;
+				font-size: 0;
+
+				li {
+					display: inline-block;
+					padding: 5px;
+					font-size: .7rem;
+					color: lighten($GREY, 5%);
+					&:hover {
+						cursor: pointer; 
+					}
+				}
+			}
+
+			.comment_details {
+				display: inline-block;
+				vertical-align: middle;
+				width: 70%;
+				text-align: left;
+			}
+
+			.comment_tools {
+				display: inline-block;
+				vertical-align: middle;
+				width: 30%;
+				text-align: right;
+				li {
+					&:hover {
+						color: $GREY;
+					}
+				}
+			}
+
+			// replies
+
+		}
+
+		.user {
+			&:hover {
+				color: $BLUE;
+				text-decoration: underline;
+				}
+			}
+	}
+
+}

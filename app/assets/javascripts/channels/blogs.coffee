@@ -5,8 +5,6 @@
 
 jQuery(document).on 'turbolinks:load', ->
   comments = $('#comments')
-  $('#submit_button').on 'disable', ->
-    alert('hello world')
   if comments.length > 0
     App.global_chat = App.cable.subscriptions.create {
       channel: "BlogsChannel"
@@ -15,10 +13,13 @@ jQuery(document).on 'turbolinks:load', ->
     connected: ->
     disconnected: ->
     received: (data) ->
-      comments.append data['comment']
+      comments.prepend data['comment']
       $('#submit_button').prop('disabled', false)
     send_comment: (comment, blog_id) ->
       @perform 'send_comment', comment: comment, blog_id: blog_id
+  $('#comment_content').keydown (e) ->
+    if e.which == 13
+      $('#submit_button').trgger('click')
   $('#new_comment').submit (e) ->
     $this = $(this)
     textarea = $this.find('#comment_content')

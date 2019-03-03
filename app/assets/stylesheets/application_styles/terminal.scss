@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
-  
+	
+	$background_color: rgba(0, 0, 0, 0.329);
+	$border_color: rgb(138, 138, 138);
   body {
 	letter-spacing: 0.1px;
 	padding: 0;
@@ -60,7 +62,7 @@
 	margin: 10px 0 30px 0;
   }
   
-  img {
+  .logo {
 	width: 900px;
 	max-width: 900px;
 	margin-bottom: 20px;
