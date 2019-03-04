@@ -22,7 +22,7 @@ module BlogsHelper
 
     class CodeRayify < Redcarpet::Render::HTML
         def block_code(code, language)
-            CodeRay.scan(code, language).div if language
+            CodeRay.highlight(code, language) if language
         end
     end
 

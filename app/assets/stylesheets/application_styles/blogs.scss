@@ -146,20 +146,20 @@
     margin-right: 5px;
   }
 
-  div .CodeRay{
-    background-color: rgb(255, 255, 255);
-    border: solid 1px rgb(138, 138, 138);
-    border-radius: 5px;
-  }
+  @import './coderay';
 
   div .code {
     background: rgba(0,0,0,0);
     margin: 0;
     pre {
-      color: black;
+      color: white;
       margin: 0;
       span {
         margin: 0
       }
     }
   }
+
+div .container .row {
+  margin-bottom: 9rem;
+}

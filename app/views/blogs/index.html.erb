@@ -1,6 +1,6 @@
 <%= render :layout => '/blogs/shared/blog_wrapper' do %>
         <h3 class="pb-3 mb-4 font-italic border-bottom">
-        Development Log
+        Chris's Development Blog
       </h3>
       <%= link_to 'Write a new blog', new_blog_path if logged_in?(:site_admin) %>
       <%= render @blogs %>
