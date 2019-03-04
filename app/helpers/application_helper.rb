@@ -57,4 +57,23 @@ module ApplicationHelper
             title
         end
     end
+
+    def social_links
+        [
+            {icon: 'github', url: 'https://github.com/greasysock'},
+            {icon: 'linkedin', url: 'https://linkedin.com/in/chris-gresock'}
+        ]
+    end
+
+    def social_helper
+        out_social = ''
+        out_social << content_tag( :ol, class: "list-unstyled social-links") do
+            social_links.collect do |item|
+                content_tag(:li) do
+                    link_to (fa_icon item[:icon]), item[:url], target: "_blank"
+                end
+            end.join.html_safe
+        end
+        out_social.html_safe
+    end
 end

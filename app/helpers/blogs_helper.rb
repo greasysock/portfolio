@@ -31,4 +31,8 @@ module BlogsHelper
         markdown = Redcarpet::Markdown.new(renderer, extensions = {})
         markdown.render(content).html_safe
     end
+
+    def random_lego_logo
+        "https://randomuser.me/portraits/lego/#{rand(9)}.jpg"
+    end
 end
