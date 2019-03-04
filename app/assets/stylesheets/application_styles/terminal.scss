@@ -10,9 +10,20 @@
 	font-weight: 400;
 	font-size: 17px;
 	color: #e7e7e7;
+	overflow: hidden;
+	background: image-url('home-bg.jpg') no-repeat center;
+	background-size: cover;
 	//background: rgb(53, 67, 91);   
 
 }
+
+.body {
+	height: 100vh; 
+	overflow: auto;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
   ::selection {
 		color: black;
 		background: white;
@@ -272,18 +283,3 @@
 .pagination a:hover,.pagination a:active{border:1px solid rgb(255, 255, 255);color:rgb(255, 255, 255);}
 .pagination span.current{padding:.1em .3em;margin:.2em;border:1px solid rgb(255, 255, 255);font-weight:bold;background-color:rgb(180, 196, 211);color:#FFF;}
 .pagination span.disabled{padding:.1em .3em;margin:.2em;border:1px solid rgba(0, 0, 0, 0);color:rgb(146, 146, 146);}
-
-#background {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -100;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
-	background: image-url('home-bg.jpg') no-repeat;
-	background-size: cover;
-}
