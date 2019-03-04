@@ -32,7 +32,14 @@ module BlogsHelper
         markdown.render(content).html_safe
     end
 
-    def random_lego_logo
-        "https://randomuser.me/portraits/lego/#{rand(9)}.jpg"
+    def get_correct_logo id
+        return id if id < 10 && id >= 0
+        return 0 if id < 0
+        get_correct_logo id-10
+        
+    end
+
+    def random_lego_logo user
+        "https://randomuser.me/portraits/lego/#{get_correct_logo user.id}.jpg"
     end
 end

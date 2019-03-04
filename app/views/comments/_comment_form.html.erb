@@ -2,7 +2,7 @@
     <%= form_with model: @comment, url:'#', local:true, id: "new_comment"  do |f|%>
         <div class="create_new_comment"> 
             <div class="user_avatar">
-		 		<img src="https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/73.jpg">
+		 		<img src="<%=random_lego_logo current_user%>">
 		 	</div><div class="input_comment">
                 <%= f.text_field :content, placeholder:"Join the conversation.." %>
             </div>
@@ -16,8 +16,8 @@
     <div class="user_avatar">
         <img src="https://s3.amazonaws.com/uifaces/faces/twitter/BillSKenney/73.jpg">
     </div><!-- the input field --><div class="input_comment">
-    <a href="<%=new_user_session_path%>">
-        <input type="text" placeholder="Join the conversation.." disabled="">
+        <a type="text" href="<%=new_user_session_path%>" class="input">
+           <input type="text" placeholder="Join the conversation..">
         </a>
     </div>
 
