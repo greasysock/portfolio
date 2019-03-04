@@ -20,15 +20,21 @@ module BlogsHelper
         end
     end
 
+    class CodeRayify < Redcarpet::Render::HTML
+        def block_code(code, language)
+            CodeRay.scan(code, language).div if language
+        end
+    end
+
     def markdown content
+        coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)
         options = {
-            filter_html:     true,
-            link_attributes: { rel: 'nofollow', target: "_blank" },
-            space_after_headers: true,
-            prettify: true
+            fenced_code_blocks: true,
+            no_intra_imphasis: true,
+            autolink: true,
+            lax_html_blocks: true
           }
-        renderer = Redcarpet::Render::HTML.new(options)
-        markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+        markdown = Redcarpet::Markdown.new(coderayified, options)
         markdown.render(content).html_safe
     end
 

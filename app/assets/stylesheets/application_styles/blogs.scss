@@ -146,7 +146,20 @@
     margin-right: 5px;
   }
 
-  p code {
-    background-color: rgba(0, 0, 0, 0.329);
+  div .CodeRay{
+    background-color: rgb(255, 255, 255);
     border: solid 1px rgb(138, 138, 138);
+    border-radius: 5px;
+  }
+
+  div .code {
+    background: rgba(0,0,0,0);
+    margin: 0;
+    pre {
+      color: black;
+      margin: 0;
+      span {
+        margin: 0
+      }
+    }
   }
