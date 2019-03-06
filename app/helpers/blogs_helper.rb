@@ -14,7 +14,7 @@ module BlogsHelper
         if logged_in?(:site_admin)
             content_tag :div, class: "card blogs-admin" do
                 content_tag(:a, "Edit", class: "btn btn-warning", href: edit_blog_path(blog)) + "<br>".html_safe + 
-                content_tag(:a, "Delete", class: "btn btn-danger", href: url_for(blog), method: :delete, data: { confirm: 'Are you sure?' }) +
+                link_to( "Delete", blog_path(blog),  class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' }) +
                 content_tag(:a, blog.status.capitalize, class: status_button(blog), href: toggle_status_blog_path(blog), method: :delete, data: { confirm: 'Are you sure?' })
             end
         end
