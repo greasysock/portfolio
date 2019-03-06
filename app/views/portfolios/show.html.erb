@@ -1,5 +1,5 @@
 <%= render :layout => '/portfolios/shared/portfolio_wrapper' do %>
-    <div class="container portfolio-container">
+    <div class="container portfolio-container" style="margin-bottom: 15rem;">
     <div class="card portfolio-view">
         <div class="row">
             <div class="col-md-7 portfolio-image">
@@ -9,10 +9,9 @@
                 <h1><%= @portfolio_item.title %></h1>
                 <em><%= @portfolio_item.subtitle %></em>
                 <p><%= @portfolio_item.body %></p>
-
-                <h2>Technologies Used:</h2>
                 <% @portfolio_item.technologies.each do |t| %>
-                <p><%= t.name %></p>
+                
+                <span class="badge badge-pill badge-dark"><%= t.name %></span>
                 <% end %>
             </div>
         </div>

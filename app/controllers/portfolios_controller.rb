@@ -59,6 +59,7 @@ class PortfoliosController < ApplicationController
         :body,
         :main_image,
         :thumb_image,
+        :project_url,
         technologies_attributes: [:name, :id, :_destroy])
     end
     

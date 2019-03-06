@@ -9,7 +9,7 @@
         <div class="btn-group">
             <%=content_tag(:a, "View", class: "button btn btn-sm btn-outline-secondary", href: portfolio_show_path(portfolio_item))%>
             <%=content_tag(:a, "Edit", class: "button btn btn-sm btn-outline-warning", href: edit_portfolio_path(portfolio_item)) if logged_in?(:site_admin) %>
-            <%=content_tag(:a, "Delete", class: "button btn btn-sm btn-outline-danger", method: :delete, href: portfolio_path(portfolio_item), data: {confirm: "Are you sure?"}) if logged_in?(:site_admin) %>
+            <%=link_to( "Delete", portfolio_path(portfolio_item), class: "button btn btn-sm btn-outline-danger", method: :delete, href: portfolio_path(portfolio_item), data: {confirm: "Are you sure?"}) if logged_in?(:site_admin) %>
 
         </div>
         <small class="text-muted">9 mins</small>
