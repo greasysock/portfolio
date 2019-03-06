@@ -1,3 +1,5 @@
+<div class="card portfolio-view", style="margin-bottom:15rem;">
+
 <%= form_with(model: portfolio_item, local: true) do |form| %>
 <div class="row">
   <div class="col-md-6">
@@ -40,10 +42,10 @@
 
   <ul>
   <%= form.fields_for :technologies do |technology_form| %>
-    <%= render 'technology_fields', f: technology_form %>
+    <%= render 'technology_fields', f: technology_form, style:"color:black;" %>
   <% end %>
   <div>
-  <%= link_to_add_association 'Add Technology', form, :technologies%>
+  <%= link_to_add_association 'Add Technology', form, :technologies, style:"color:black;"%>
   </div>
   </ul>
 
@@ -51,3 +53,5 @@
     <%= form.submit "Save Portfolio", class: "btn, btn-block" %>
   </div>
 <% end %>
+
+</div>
