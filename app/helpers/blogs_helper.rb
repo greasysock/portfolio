@@ -45,6 +45,18 @@ module BlogsHelper
         
     end
 
+    def get_body blog
+        puts '*'*200
+        puts params[:action]
+        puts '*'*200
+        case params[:action]
+        when 'show'
+            return blog.body
+        when 'index'
+            return blog.body.truncate(200)
+        end
+    end
+
     def random_lego_logo user
         "https://randomuser.me/portraits/lego/#{get_correct_logo user.id}.jpg"
     end
