@@ -46,9 +46,6 @@ module BlogsHelper
     end
 
     def get_body blog
-        puts '*'*200
-        puts params[:action]
-        puts '*'*200
         case params[:action]
         when 'show'
             return blog.body
