@@ -1,7 +1,5 @@
 <%= stylesheet_link_tag    'application_styles/portfolio', media: 'all', 'data-turbolinks-track': 'reload' %>
 <main role="main">
-      <%=render "portfolios/shared/top_bar"%>
-
       <div class="container">
     <%= link_to "Create New Item", new_portfolio_path if logged_in?(:site_admin) %>
     </div>
