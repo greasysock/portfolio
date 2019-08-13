@@ -31,6 +31,10 @@ module ApplicationHelper
                 title: 'PORTFOLIO'
             },
             {
+                url: resume_path,
+                title: 'RESUME'
+            },
+            {
                 url: contact_path,
                 title: 'CONTACT'
             }

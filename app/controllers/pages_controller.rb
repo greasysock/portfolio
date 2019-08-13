@@ -12,4 +12,8 @@ class PagesController < ApplicationController
   def contact
     set_page_subtitle "Contact"
   end
+
+  def resume
+    set_page_subtitle "Resume"
+  end
 end
