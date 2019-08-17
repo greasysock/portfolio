@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   resources :portfolios
 
-  mount PdfjsViewer::Rails::Engine => "/pdfjs", as: 'pdfjs'
-
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   get 'resume', to: 'pages#resume'
