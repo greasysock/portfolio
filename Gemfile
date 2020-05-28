@@ -64,7 +64,7 @@ gem 'pry-byebug'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'petergate'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
